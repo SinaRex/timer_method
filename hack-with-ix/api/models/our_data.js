@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 var dataSchema = new Schema(
 	{
 		timestamp: {
-			type: Timestamp, required: true 
+			type: Double, required: true 
 		},
 		spend: {
 			type: Double, required: true

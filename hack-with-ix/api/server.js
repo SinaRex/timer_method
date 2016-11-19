@@ -18,3 +18,7 @@ process.on('SIGTERM', function () {
         process.exit();
     }, TIMEOUT);
 });
+
+var my_data = require('./routes/data-route');
+
+app.post('/', my_data.addOne);
