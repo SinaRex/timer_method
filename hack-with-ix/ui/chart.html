@@ -1,0 +1,76 @@
+
+<!doctype html>
+<html>
+
+<head>
+    <title>Combo Bar-Line Chart</title>
+    <script src="node_modules/Chart.js/dist/Chart.bundle.js"></script>
+    <script src="utils.js"></script>
+    <style>
+    canvas {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div style="width: 75%">
+        <canvas id="canvas"></canvas>
+    </div>
+    <button id="randomizeData">Randomize Data</button>
+    <script>
+        var chartData = {
+            datasets: [{
+                type: 'line',
+                borderColor: window.chartColors.blue,
+                borderWidth: 2,
+                fill: false,
+                data: [{
+                    x: randomScalingFactor(),
+                    y: randomScalingFactor()
+                }, {
+                  x: randomScalingFactor(),
+                  y: randomScalingFactor()
+                }, {
+                  x: randomScalingFactor(),
+                  y: randomScalingFactor()
+                }]
+
+
+
+            }]
+
+        };
+        window.onload = function() {
+            var ctx = document.getElementById("canvas").getContext("2d");
+            window.myMixedChart = new Chart(ctx, {
+                type: 'line',
+                data: chartData,
+                options: {
+                  scales: {
+                      xAxes: [{
+                          type: 'linear',
+                          position: 'bottom'
+                      }]
+                  }
+              }
+            });
+        };
+
+        document.getElementById('randomizeData').addEventListener('click', function() {
+            chartData.datasets.forEach(function(dataset) {
+                dataset.data = dataset.data.map(function() {
+                    return {
+                        x: randomScalingFactor(),
+                        y: randomScalingFactor()
+                    };
+                });
+            });
+            window.myMixedChart.update();
+        });
+    </script>
+</body>
+
+</html>
