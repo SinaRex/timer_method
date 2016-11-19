@@ -28,18 +28,27 @@
                 borderWidth: 2,
                 fill: false,
                 data: [{
-                    x: randomScalingFactor(),
+                    x: 0,
                     y: randomScalingFactor()
                 }, {
-                  x: randomScalingFactor(),
+                  x: 1,
                   y: randomScalingFactor()
                 }, {
-                  x: randomScalingFactor(),
+                  x: 2,
+                  y: randomScalingFactor()
+                }, {
+                  x: 3,
+                  y: randomScalingFactor()
+                }, {
+                  x: 4,
+                  y: randomScalingFactor()
+                },{
+                  x: 5,
+                  y: randomScalingFactor()
+                },{
+                  x: 6,
                   y: randomScalingFactor()
                 }]
-
-
-
             }]
 
         };
@@ -60,10 +69,11 @@
         };
 
         document.getElementById('randomizeData').addEventListener('click', function() {
+            var i = 0;
             chartData.datasets.forEach(function(dataset) {
                 dataset.data = dataset.data.map(function() {
                     return {
-                        x: randomScalingFactor(),
+                        x: i++,
                         y: randomScalingFactor()
                     };
                 });
