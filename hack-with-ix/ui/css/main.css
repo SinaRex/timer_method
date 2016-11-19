@@ -1,0 +1,160 @@
+body{
+	background-color: #EEE;
+	font-family: Chalkboard, Arial, sans-serif;
+	padding: 10px;
+}
+
+
+h1, h2, h3{
+	margin:0px;
+}
+
+#container{
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+}
+
+#header{
+	float: left;
+	color: white;
+	text-align: left;
+	font-family: Papyrus, Arial, sans-serif;
+	background-color: #4f887c;
+}
+
+#header img{
+	width: 500px;
+	border:0;
+}
+
+#content{
+	padding:0px;
+	margin:auto;
+}
+
+#navigation ul{
+	list-style-type: none;
+	background-color: #4f887c;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+#navigation li{
+	float:right;
+
+}
+
+#navigation li a{
+	display: block;
+	color: white;
+	text-decoration: none;
+	padding: 15px;
+}
+
+#navigation li a:hover:not(.selected) {
+	background-color: #515358;
+
+}
+
+#navigation .selected{
+	background-color: white;
+	color: #4f887c;
+	outline-style: double;
+    outline-color: #4f887c;
+    outline-width: 4px;
+
+    border: 1px solid black;
+    /* Move the outline 15px away from the border */
+    outline-offset: 15px;
+
+}
+
+
+
+.button {
+  display: inline-block;
+  border-radius: 10px;
+  background-color: #4f887c;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+  padding: 20px;
+  width: 130px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 20px;
+
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+/*
+#navigation{
+	width: 165px;
+}
+
+#navigation ul{
+	list-style-type: none;
+	padding: 0px 0px 0px 10px;
+}
+#navigation li a{
+	display: block;
+	text-decoration: none;
+	border-bottom: solid;
+	width: 100px;
+	padding: 20px;
+	text-align: center;
+	color: black
+}
+
+#navigation .selected{
+	font-weight: bold;
+	color: white;
+	background-color:#66CCFF;
+}
+
+#navigation li a:hover:not(.selected){
+    background-color: #155;
+    color: white;
+}
+*/
+
+#main{
+	/*width:33%;*/
+	float: left;
+	padding: 20px 0px 0px 20px;
+	margin: 0 auto;
+}
+
+#footer{
+	padding: 10px;
+	background-color: #4f887c;
+	clear: both;
+	color: white;
+	text-align: center;
+}
