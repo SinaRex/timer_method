@@ -1,0 +1,86 @@
+
+<!doctype html>
+<html>
+
+<head>
+    <title>Combo Bar-Line Chart</title>
+    <script src="node_modules/Chart.js/dist/Chart.bundle.js"></script>
+    <script src="utils.js"></script>
+    <style>
+    canvas {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div style="width: 75%">
+        <canvas id="canvas"></canvas>
+    </div>
+    <button id="randomizeData">Randomize Data</button>
+    <script>
+        var chartData = {
+            datasets: [{
+                type: 'line',
+                borderColor: window.chartColors.blue,
+                borderWidth: 2,
+                fill: false,
+                data: [{
+                    x: 0,
+                    y: randomScalingFactor()
+                }, {
+                  x: 1,
+                  y: randomScalingFactor()
+                }, {
+                  x: 2,
+                  y: randomScalingFactor()
+                }, {
+                  x: 3,
+                  y: randomScalingFactor()
+                }, {
+                  x: 4,
+                  y: randomScalingFactor()
+                },{
+                  x: 5,
+                  y: randomScalingFactor()
+                },{
+                  x: 6,
+                  y: randomScalingFactor()
+                }]
+            }]
+
+        };
+        window.onload = function() {
+            var ctx = document.getElementById("canvas").getContext("2d");
+            window.myMixedChart = new Chart(ctx, {
+                type: 'line',
+                data: chartData,
+                options: {
+                  scales: {
+                      xAxes: [{
+                          type: 'linear',
+                          position: 'bottom'
+                      }]
+                  }
+              }
+            });
+        };
+
+        document.getElementById('randomizeData').addEventListener('click', function() {
+            var i = 0;
+            chartData.datasets.forEach(function(dataset) {
+                dataset.data = dataset.data.map(function() {
+                    return {
+                        x: i++,
+                        y: randomScalingFactor()
+                    };
+                });
+            });
+            window.myMixedChart.update();
+        });
+    </script>
+</body>
+
+</html>

@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 
 // Get the index page:
 app.get('/', function(req, res) {
-    res.sendfile('index.html');
+   res.sendfile('chart.html');
 });
 
 app.get('/sign_up', function(req, res){
