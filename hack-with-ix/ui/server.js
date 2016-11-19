@@ -20,6 +20,15 @@ app.get('/', function(req, res) {
     res.sendfile('index.html');
 });
 
+app.get('/sign_up', function(req, res){
+    res.sendfile('sign_up_page.html');
+});
+
+app.post('/sign_up', function(req, res){
+	console.log(req.body);
+	res.send('sucess');
+});
+
 // Start the server
 app.listen(3000);
 console.log('Listening on port 3000');

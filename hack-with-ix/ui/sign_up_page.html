@@ -28,38 +28,34 @@
 
 				<div id="main">
 					<h2>Sign Up</h2>
-					<form>
+					<form action="/sign_up" method="post">
 				    <div class="form-group">
-				      <label for="usr">First Name:</label>
+				      <label for="usr" name="fname">First Name:</label>
 				      <input type="text" class="form-control" id="firstName" placeholder="First Name">
 				    </div>
 				    <div class="form-group">
-				      <label for="usr">Last Name:</label>
+				      <label for="usr" name="lname">Last Name:</label>
 				      <input type="text" class="form-control" id="lastName" placeholder="Last Name">
 				    </div>
 				    <div class="form-group">
-				      <label for="email">Email:</label>
+				      <label for="email" name="email">Email:</label>
 				      <input type="text" class="form-control" id="email" placeholder="example@domain.com">
 				    </div>
 				    <div class="form-group">
-				      <label for="pwd">Password:</label>
+				      <label for="pwd" name="password">Password:</label>
 				      <input type="password" class="form-control" id="pwd" placeholder="************">
 				    </div>
+				    <div class="form-group">
+				    <CENTER><input type="submit" class="button" style="vertical-align:middle" value="Sign up"></input></CENTER>
+				    </div>
 				  </form>
-				  
-				    <CENTER><button class="button" style="vertical-align:middle" onClick="sign_in"><span>Sign Up</span></button></CENTER>
 
 				</div>
 			</div>
 
 			<div id="footer">
 				Copyright &copy; 2016 PizzaCats #64.
-
 			</div>
 		</div>
 	</body>
-	
-
-	<script type="text/javascript">
-	</script>
 </html>
