@@ -21,4 +21,3 @@ process.on('SIGTERM', function () {
 
 var my_data = require('./routes/data-route');
 
-app.post('/', my_data.addOne);
