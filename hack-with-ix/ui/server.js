@@ -25,8 +25,12 @@ app.get('/sign_up', function(req, res){
 });
 
 app.post('/sign_up', function(req, res){
-	console.log(req.body);
+	console.log(req.body.fname);
 	res.send('sucess');
+});
+
+app.get('/bar', function(req, res){
+	res.sendfile('bar.html');
 });
 
 // Start the server
